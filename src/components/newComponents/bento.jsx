@@ -29,23 +29,29 @@ export const Letter = () => {
         <div className=" -mt-4">
           <LayoutTextFlip className="" />
         </div>
-        <div className="md:hidden">
+        <div className="md:hidden font-semibold">
           <Highlighter padding="2px" action="circle" color="#87CEFA">
             into
           </Highlighter>
         </div>
       </div>
-      <div className="absolute bottom-20 left-35 md:bottom-7 md:left-29">
-        <div className="md:hidden">
+      <div className="absolute bottom-15  md:bottom-2  w-full flex justify-center items-center">
+        <div className=" flex flex-col gap-4 md:gap-2 text-center font-semibold">
           <Highlighter padding={0.1} action="underline" color="#FF9800">
-            into reality
+            into pixel perfect
+          </Highlighter>
+           <Highlighter padding={0.1} action="circle" color="#4CAF50">
+            reality
           </Highlighter>
         </div>
-        <div className="hidden md:block">
-          <Highlighter padding="2px" action="circle" color="#FF9800">
-            into reality
+        {/* <div className="hidden md:block flex flex-col gap-2 text-center font-semibold ">
+           <Highlighter padding={0.1} action="underline" color="#FF9800">
+            into pixel perfect
           </Highlighter>
-        </div>
+           <Highlighter padding={0.1} action="circle" color="#FF9800">
+            reality
+          </Highlighter>
+        </div> */}
       </div>
     </>
   );
