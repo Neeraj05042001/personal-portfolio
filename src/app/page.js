@@ -1,103 +1,150 @@
-import Image from "next/image";
+import GradientText from "@/components/GradientText";
+import ContactUs1 from "@/components/mvpblocks/contact-us-1";
+import InteractiveTooltip from "@/components/mvpblocks/interactive-tooltip";
+import { BentoDemo } from "@/components/newComponents/bento";
+import { ProjectCard } from "@/components/newComponents/ProjectCard";
+import Tape from "@/components/newComponents/Tape";
+import Contacts from "@/components/sections/Contacts";
+import { ProjectSection } from "@/components/sections/projects2";
+import Skills from "@/components/sections/Skills";
+import { BackgroundBeamsWithCollision } from "@/components/ui/background-beams-with-collision";
+import { BlurFade } from "@/components/ui/blur-fade";
+import { BorderBeam } from "@/components/ui/border-beam";
+import { Highlighter } from "@/components/ui/highlighter";
+import { SparklesText } from "@/components/ui/sparkles-text";
+import { TextLayoutFlip } from "@/components/ui/TextLayoutFlip";
+import { DATA } from "@/data/resume";
+import Projects from "@/new-sections/Projects";
+import { Instrument_Serif } from "next/font/google";
+import Markdown from "react-markdown";
 
-export default function Home() {
+const BLUR_FADE_DELAY = 0.04;
+
+const instrument = Instrument_Serif({
+  subsets: ["latin"],
+  variable: "--font-instrument",
+  weight: "400",
+});
+
+const Home = () => {
   return (
-    <div className="font-sans grid grid-rows-[20px_1fr_20px] items-center justify-items-center min-h-screen p-8 pb-20 gap-16 sm:p-20">
-      <main className="flex flex-col gap-[32px] row-start-2 items-center sm:items-start">
-        <Image
-          className="dark:invert"
-          src="/next.svg"
-          alt="Next.js logo"
-          width={180}
-          height={38}
-          priority
-        />
-        <ol className="font-mono list-inside list-decimal text-sm/6 text-center sm:text-left">
-          <li className="mb-2 tracking-[-.01em]">
-            Get started by editing{" "}
-            <code className="bg-black/[.05] dark:bg-white/[.06] font-mono font-semibold px-1 py-0.5 rounded">
-              src/app/page.js
-            </code>
-            .
-          </li>
-          <li className="tracking-[-.01em]">
-            Save and see your changes instantly.
-          </li>
-        </ol>
-
-        <div className="flex gap-4 items-center flex-col sm:flex-row">
-          <a
-            className="rounded-full border border-solid border-transparent transition-colors flex items-center justify-center bg-foreground text-background gap-2 hover:bg-[#383838] dark:hover:bg-[#ccc] font-medium text-sm sm:text-base h-10 sm:h-12 px-4 sm:px-5 sm:w-auto"
-            href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <Image
-              className="dark:invert"
-              src="/vercel.svg"
-              alt="Vercel logomark"
-              width={20}
-              height={20}
-            />
-            Deploy now
-          </a>
-          <a
-            className="rounded-full border border-solid border-black/[.08] dark:border-white/[.145] transition-colors flex items-center justify-center hover:bg-[#f2f2f2] dark:hover:bg-[#1a1a1a] hover:border-transparent font-medium text-sm sm:text-base h-10 sm:h-12 px-4 sm:px-5 w-full sm:w-auto md:w-[158px]"
-            href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Read our docs
-          </a>
+    <main className="flex flex-col min-h-[100dvh space-y-10 relative">
+      {/* Hero Section */}
+      {/* <section id="hero " className="">
+        <div className="mx-auto w-full max-w-2xl space-y-8">
+          <div className="gap-2 flex justify-between">
+            <div className="flex-col flex flex-1 space-y-1.5 mt-6">
+              <BlurFade
+                delay={BLUR_FADE_DELAY}
+                className="text-3xl font-bold tracking-tighter sm:text-5xl xl:text-6xl/none"
+                yoffset={8}
+              >
+                Hi, I'm {DATA.name} 👋
+              </BlurFade>
+              <BlurFade
+                className="max-w-[600px] md:text-xl"
+                delay={BLUR_FADE_DELAY}
+              >
+                {DATA.description}
+              </BlurFade>
+            </div>
+            <BlurFade delay={BLUR_FADE_DELAY}>
+              <InteractiveTooltip className="" />
+            </BlurFade>
+          </div>
         </div>
-      </main>
-      <footer className="row-start-3 flex gap-[24px] flex-wrap items-center justify-center">
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="/file.svg"
-            alt="File icon"
-            width={16}
-            height={16}
-          />
-          Learn
-        </a>
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="/window.svg"
-            alt="Window icon"
-            width={16}
-            height={16}
-          />
-          Examples
-        </a>
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://nextjs.org?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="/globe.svg"
-            alt="Globe icon"
-            width={16}
-            height={16}
-          />
-          Go to nextjs.org →
-        </a>
-      </footer>
-    </div>
+      </section> */}
+
+      {/* About Section */}
+
+      {/* <section id="about" className="-mt-10">
+        <BlurFade delay={BLUR_FADE_DELAY * 3}>
+          <h2 className="text-xl font-bold">About</h2>
+        </BlurFade>
+        <BlurFade delay={BLUR_FADE_DELAY * 4}>
+          <p className="max-w-prose text-pretty font-sans text-sm text-muted-foreground dark:text-white/80 mb-4 ">
+            {DATA.summary}
+          </p>
+          <p className="max-w-prose text-pretty font-sans text-sm text-muted-foreground dark:text-white/80 mb-4 ">
+            {DATA.summary}
+          </p>
+         
+        </BlurFade>
+      </section> */}
+
+      {/* Skills Section */}
+
+      <BackgroundBeamsWithCollision className="py-18">
+        {/* Hero Section */}
+        <section id="hero " className="">
+          <div className="mx-auto w-full max-w-2xl space-y-8">
+            <div className="gap-2 flex justify-between pr-10 ">
+              <div className="flex-col flex flex-1 space-y-1.5 mt-1">
+                <BlurFade
+                  delay={BLUR_FADE_DELAY}
+                  className="text-3xl font-bold tracking-tighter sm:text-5xl xl:text-6xl/none"
+                  yoffset={8}
+                >
+                  Hi, I'm {DATA.name} 👋
+                </BlurFade>
+                <BlurFade
+                  className="max-w-[600px] md:text-xl"
+                  delay={BLUR_FADE_DELAY}
+                >
+                  {DATA.description}
+                </BlurFade>
+              </div>
+              <BlurFade delay={BLUR_FADE_DELAY}>
+                <InteractiveTooltip className="" />
+              </BlurFade>
+            </div>
+          </div>
+        </section>
+
+        {/* About Section below one */}
+
+        <section id="about" className="mt-6">
+          <BlurFade delay={BLUR_FADE_DELAY * 3}>
+            <h2 className="text-xl font-bold">About</h2>
+          </BlurFade>
+          <BlurFade delay={BLUR_FADE_DELAY * 4}>
+            <p className="  font-sans text-sm text-muted-foreground dark:text-white/80 mb-4 ">
+              {DATA.summary}
+            </p>
+            <p className="font-sans text-sm text-muted-foreground dark:text-white/80 mb-4 ">
+              {DATA.summary2}
+            </p>
+          </BlurFade>
+        </section>
+
+        {/* Skills Section */}
+
+        <section className="mt-6 h-fit pt-6 relative rounded-lg">
+          <BlurFade delay={BLUR_FADE_DELAY * 4}>
+            <h2 className="text-xl font-bold mb-4">Skills</h2>
+            <Skills />
+          </BlurFade>
+          <BorderBeam duration={12} size={100} className="" />
+        </section>
+      </BackgroundBeamsWithCollision>
+      {/* Skills Section */}
+      {/* Bento Section */}
+      <BentoDemo />
+      {/* Project Section */}
+      <Projects />
+
+      <div className="relative max-w-[700px]">
+        <div className="absolute z-10 w-[700px] -right-6 h-10 ">
+          <Tape />
+        </div>
+      </div>
+      {/* contact us */}
+      <section>
+        <Contacts />
+        <ContactUs1 />
+      </section>
+    </main>
   );
-}
+};
+
+export default Home;
