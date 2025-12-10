@@ -6,6 +6,8 @@ import { DATA } from "@/data/resume";
 import { Dock } from "@/components/ui/dock";
 import { DockDemo } from "@/components/ui/FloatingDock";
 import Navbar from "@/components/newComponents/Navbar";
+import PageLoader from "@/components/newComponents/PageLoader";
+import { BlurFade } from "@/components/ui/blur-fade";
 
 const fontSans = FontSans({
   subsets: ["latin"],
@@ -22,7 +24,7 @@ export const metadata = {
   title: DATA.name,
   description: DATA.description,
 };
-
+const BLUR_FADE_DELAY = 4;
 export default function RootLayout({ children }) {
   return (
     <html lang="en" suppressHydrationWarning>
@@ -39,8 +41,11 @@ export default function RootLayout({ children }) {
           enableSystem
           disableTransitionOnChange
         >
-          {children}
+        <PageLoader/>
+          /<BlurFade delay={BLUR_FADE_DELAY}>
+            {children}
           <Navbar/>
+          </BlurFade>
           {/* <DockDemo /> */}
         </ThemeProvider>
       </body>
