@@ -85,7 +85,7 @@ const Home = () => {
                   className="text-3xl font-bold tracking-tighter sm:text-5xl xl:text-6xl/none"
                   yoffset={8}
                 >
-                  Hi, That&apos;m {DATA.name} 👋 s
+                  Hi, I&apos;m {DATA.name} 👋 
 
                 </BlurFade>
                 <BlurFade
