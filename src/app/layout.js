@@ -42,7 +42,7 @@ export default function RootLayout({ children }) {
           disableTransitionOnChange
         >
         <PageLoader/>
-          /<BlurFade delay={BLUR_FADE_DELAY}>
+          <BlurFade delay={BLUR_FADE_DELAY}>
             {children}
           <Navbar/>
           </BlurFade>
