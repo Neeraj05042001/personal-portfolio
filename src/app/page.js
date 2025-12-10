@@ -85,18 +85,17 @@ const Home = () => {
                   className="text-3xl font-bold tracking-tighter sm:text-5xl xl:text-6xl/none"
                   yoffset={8}
                 >
-                  Hi, I&apos;m {DATA.name} 👋 
-
+                  Hi, I&apos;m {DATA.name} 👋
                 </BlurFade>
                 <BlurFade
-                  className="max-w-[600px] md:text-xl"
+                  className="max-w-[600px] md:text-xl "
                   delay={BLUR_FADE_DELAY}
                 >
                   {DATA.description}
                 </BlurFade>
               </div>
               <BlurFade delay={BLUR_FADE_DELAY}>
-                <InteractiveTooltip className="" />
+                <InteractiveTooltip className="bg-purple-700" />
               </BlurFade>
             </div>
           </div>
@@ -130,15 +129,30 @@ const Home = () => {
       </BackgroundBeamsWithCollision>
       {/* Skills Section */}
       {/* Bento Section */}
-      <BentoDemo />
+      <section>
+        <BlurFade delay={BLUR_FADE_DELAY * 6}>
+          <BentoDemo />
+        </BlurFade>
+      </section>
       {/* Project Section */}
-      <Projects />
+      <section>
+        <BlurFade delay={BLUR_FADE_DELAY * 8}>
+          <Projects />
+        </BlurFade>
+      </section>
 
-      <div className="relative max-w-[700px]">
-        <div className="absolute z-10 w-[700px] -right-6 h-10 ">
-          <Tape />
-        </div>
-      </div>
+      {/* TAPE */}
+
+      <section>
+        <BlurFade delay={BLUR_FADE_DELAY * 12}>
+          <div className="relative max-w-[700px]">
+            <div className="absolute z-10 w-[700px] -right-6 h-10 ">
+              <Tape />
+            </div>
+          </div>
+        </BlurFade>
+      </section>
+
       {/* contact us */}
       <section>
         <Contacts />
