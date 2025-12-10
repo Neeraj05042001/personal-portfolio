@@ -1,6 +1,6 @@
-'use client';
-import { useEffect, useState } from 'react';
-import DynamicText from '../kokonutui/dynamic-text';
+"use client";
+import { useEffect, useState } from "react";
+import DynamicText from "../kokonutui/dynamic-text";
 
 export default function PageLoader() {
   const [isLoading, setIsLoading] = useState(true);
@@ -30,15 +30,15 @@ export default function PageLoader() {
       }
     };
 
-    if (document.readyState === 'complete') {
+    if (document.readyState === "complete") {
       pageLoaded = true;
       checkBothComplete();
     } else {
-      window.addEventListener('load', handleLoad);
+      window.addEventListener("load", handleLoad);
     }
 
     return () => {
-      window.removeEventListener('load', handleLoad);
+      window.removeEventListener("load", handleLoad);
       clearTimeout(timer);
     };
   }, []);
@@ -46,12 +46,12 @@ export default function PageLoader() {
   if (!isLoading) return null;
 
   return (
-    <div 
-      className={`fixed inset-0 z-50 flex items-center justify-center bg-white dark:bg-black  transition-opacity duration-500 ${
-        isFading ? 'opacity-0' : 'opacity-100'
+    <div
+      className={`fixed inset-0 z-50 flex items-center justify-center bg-background  transition-opacity duration-500 ${
+        isFading ? "opacity-0" : "opacity-100"
       }`}
     >
-    <DynamicText/>
+      <DynamicText />
       {/* <div className="text-center">
         <div className="w-16 h-16 border-4 border-gray-200 border-t-blue-600 rounded-full animate-spin mx-auto"></div>
         <p className="mt-4 text-gray-600">Loading...</p>
