@@ -47,7 +47,7 @@ export default function PageLoader() {
 
   return (
     <div 
-      className={`fixed inset-0 z-50 flex items-center justify-center bg-white transition-opacity duration-500 ${
+      className={`fixed inset-0 z-50 flex items-center justify-center bg-white dark:bg-black  transition-opacity duration-500 ${
         isFading ? 'opacity-0' : 'opacity-100'
       }`}
     >

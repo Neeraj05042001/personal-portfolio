@@ -37,15 +37,16 @@ export default function RootLayout({ children }) {
       >
         <ThemeProvider
           attribute="class"
-          defaultTheme="dark"
+          defaultTheme="system"
           enableSystem
           disableTransitionOnChange
         >
-        <PageLoader/>
+          <PageLoader />
           <BlurFade delay={BLUR_FADE_DELAY}>
             {children}
-          <Navbar/>
+            {/* <Navbar/> */}
           </BlurFade>
+          <Navbar />
           {/* <DockDemo /> */}
         </ThemeProvider>
       </body>
