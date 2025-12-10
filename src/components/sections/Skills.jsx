@@ -12,7 +12,7 @@ const Skills = () => {
           <div className="  border-1 border-dashed rounded-md px-2.5 py-1.5 border-black/30 bg-white shadow-lg drop-shadow dark:bg-black dark:text-white flex items-center text-xs font-semibold transition-colors focus:outline-none focus:ring-2 focus:ring-ring focus:ring-offset-2  dark:border-white/40 btn-hover gap-x-1 cursor-pointer w-fit">
             <Image
               src={skill.icon}
-              alt={skill.name} 
+              alt={skill.name}
               width={30}
               height={30}
               className="h-3 w-3"
