@@ -21,8 +21,8 @@ const Earth = ({
   useEffect(() => {
     let width = 0;
     const onResize = () => {
-      if (canvasRef.current) {
-        width = canvasRef.current.offsetWidth;
+      if (canvasRef?.current) {
+        width = canvasRef?.current?.offsetWidth;
       }
     };
 
@@ -31,7 +31,7 @@ const Earth = ({
 
     let phi = 0;
 
-    const globe = createGlobe(canvasRef.current, {
+    const globe = createGlobe(canvasRef?.current, {
       devicePixelRatio: 2,
       width: width * 2,
       height: width * 2,

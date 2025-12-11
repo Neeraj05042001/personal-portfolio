@@ -29,51 +29,6 @@ const instrument = Instrument_Serif({
 const Home = () => {
   return (
     <main className="flex flex-col min-h-[100dvh space-y-10 relative">
-      {/* Hero Section */}
-      {/* <section id="hero " className="">
-        <div className="mx-auto w-full max-w-2xl space-y-8">
-          <div className="gap-2 flex justify-between">
-            <div className="flex-col flex flex-1 space-y-1.5 mt-6">
-              <BlurFade
-                delay={BLUR_FADE_DELAY}
-                className="text-3xl font-bold tracking-tighter sm:text-5xl xl:text-6xl/none"
-                yoffset={8}
-              >
-                Hi, I'm {DATA.name} 👋
-              </BlurFade>
-              <BlurFade
-                className="max-w-[600px] md:text-xl"
-                delay={BLUR_FADE_DELAY}
-              >
-                {DATA.description}
-              </BlurFade>
-            </div>
-            <BlurFade delay={BLUR_FADE_DELAY}>
-              <InteractiveTooltip className="" />
-            </BlurFade>
-          </div>
-        </div>
-      </section> */}
-
-      {/* About Section */}
-
-      {/* <section id="about" className="-mt-10">
-        <BlurFade delay={BLUR_FADE_DELAY * 3}>
-          <h2 className="text-xl font-bold">About</h2>
-        </BlurFade>
-        <BlurFade delay={BLUR_FADE_DELAY * 4}>
-          <p className="max-w-prose text-pretty font-sans text-sm text-muted-foreground dark:text-white/80 mb-4 ">
-            {DATA.summary}
-          </p>
-          <p className="max-w-prose text-pretty font-sans text-sm text-muted-foreground dark:text-white/80 mb-4 ">
-            {DATA.summary}
-          </p>
-         
-        </BlurFade>
-      </section> */}
-
-      {/* Skills Section */}
-
       <BackgroundBeamsWithCollision className="py-18">
         {/* Hero Section */}
         <section id="hero " className="">
@@ -154,7 +109,7 @@ const Home = () => {
       </section>
 
       {/* contact us */}
-      <section>
+      <section className="mb-25">
         <Contacts />
         <ContactUs1 />
       </section>

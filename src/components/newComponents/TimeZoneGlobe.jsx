@@ -68,7 +68,7 @@ const TimeZoneGlobe = () => {
             <span className="text-sm tracking-wide">USA</span>
           </Button>
         </div>
-        <Earth className="absolute w-120 top-28 -left-20 overflow-hidden" />
+        <Earth className="absolute w-220 md:w-120 top-15 md:top-28 -left-21 md:-left-20 overflow-hidden " />
         <div className="absolute md:top-70 top-55 p-4 pointer-events-none z-10 flex transform-gpu flex-col gap-1 transition-all duration-300 lg:group-hover:-translate-y-10">
           <MapPin className="h-12 w-12 origin-left transform-gpu text-neutral-700 transition-all duration-300 ease-in-out group-hover:scale-75" />
           <p className="max-w-lg text-neutral-400">REMOTE</p>
