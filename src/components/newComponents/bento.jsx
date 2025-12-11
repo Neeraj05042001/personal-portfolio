@@ -38,10 +38,14 @@ export const Letter = () => {
       <div className="absolute bottom-15  md:bottom-2  w-full flex justify-center items-center">
         <div className=" flex flex-col gap-4 md:gap-2 text-center font-semibold">
           <Highlighter padding={0.1} action="underline" color="#FF9800">
-            into pixel perfect
+            <div className="flex font-serif text-xl  md:text-sm">
+              {" "}
+              <span className="hidden md:block"> into- </span>
+              <span>pixel perfect</span>
+            </div>
           </Highlighter>
-           <Highlighter padding={0.1} action="circle" color="#4CAF50">
-            reality
+          <Highlighter padding={0.1} action="circle" color="#4CAF50">
+            <span className="font-serif">reality</span>
           </Highlighter>
         </div>
         {/* <div className="hidden md:block flex flex-col gap-2 text-center font-semibold ">
@@ -101,7 +105,7 @@ const features = [
     description: "",
     href: "/",
     cta: "Learn more",
-    background: <TestimonialMarquee/>,
+    background: <TestimonialMarquee />,
     className: "md:col-start-1 md:col-end-3 md:row-start-4 md:row-end-5",
   },
 ];
