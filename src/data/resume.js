@@ -190,33 +190,36 @@ export const DATA = {
   projects: [
     {
       title: "Personal Portfolio",
-      href: "https://chatcollect.com",
-      dates: "Jan 2024 - Feb 2024",
+      href: "https://neeraj-pearl.vercel.app/",
+      dates: "November 2025 - December 2025",
       gradient:
         "bg-gradient-to-br from-pink-600 via-pink-500 to-pink-600 dark:from-pink-900 dark:via-pink-800 dark:to-pink-900",
       active: true,
       description:
-        "With the release of the [OpenAI GPT Store](https://openai.com/blog/introducing-the-gpt-store), I decided to build a SaaS which allows users to collect email addresses from their GPT users. This is a great way to build an audience and monetize your GPT API usage.",
+        "A visually rich personal portfolio showcasing smooth animations, engaging micro-interactions, and a dynamic bento layout crafted to present my work in a memorable way.",
       technologies: [
         "Next.js",
         "Typescript",
-        "PostgreSQL",
-        "Prisma",
-        "TailwindCSS",
-        "Stripe",
+        "Tailwind CSS",
         "Shadcn UI",
+        "Cloudinary",
+        "Framer",
+        "GSAP",
         "Magic UI",
+        "Smooth UI",
+        "Kokonut UI",
+        "MVP Blocks",
       ],
       links: [
         {
           type: "Website",
-          href: "https://chatcollect.com",
+          href: "https://neeraj-pearl.vercel.app/",
           icon: <Icons.globe className="size-3" />,
         },
       ],
       image: "",
       video:
-        "https://pub-83c5db439b40468498f97946200806f7.r2.dev/chat-collect.mp4",
+        "https://res.cloudinary.com/deowedlsd/video/upload/v1765446302/portfolio_np4ncz.mp4",
     },
     {
       title: "Hotel Booking",
