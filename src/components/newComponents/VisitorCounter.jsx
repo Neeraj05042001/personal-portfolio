@@ -7,7 +7,7 @@ const VisitorCounter = () => {
 
   useEffect(() => {
     const fetchVisitor = async () => {
-      const response = await fetch("../../app/api/visitor");
+      const response = await fetch("/app/api/visitor");
       const data = await response.json();
       setVisitorData(data);
     };
@@ -20,7 +20,7 @@ const VisitorCounter = () => {
     <div className="">
       <p>
         {visitorData.returning ? "Welcome Back" : "Welcome!"} You are the
-        <b>{data.count}th visitor</b>
+        <b>{visitorData.count}th visitor</b>
       </p>
     </div>
   );
