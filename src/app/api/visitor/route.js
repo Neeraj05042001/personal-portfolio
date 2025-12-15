@@ -6,7 +6,6 @@ export async function GET() {
   const cookieStore = cookies();
   const existing = cookieStore.get("visitor_id");
 
-  // Returning visitor
   if (existing) {
     return NextResponse.json({
       count: Number(existing.value),
@@ -14,7 +13,6 @@ export async function GET() {
     });
   }
 
-  // New visitor
   const count = await kv.incr("visitor_count");
 
   const response = NextResponse.json({
@@ -23,7 +21,7 @@ export async function GET() {
   });
 
   response.cookies.set("visitor_id", count.toString(), {
-    maxAge: 60 * 60 * 24 * 30, // 30 days
+    maxAge: 60 * 60 * 24 * 30,
     httpOnly: true,
     sameSite: "lax",
     path: "/",
