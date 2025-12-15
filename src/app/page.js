@@ -110,14 +110,21 @@ const Home = () => {
       </section>
 
       {/* contact us */}
-      <section className="mb-25">
+      <section className="mb-6">
         <Contacts />
         <ContactUs1 />
       </section>
-      <section className="mb-56 flex items-center justify-center">
-        <div>
-          <h4>Visitor counter</h4>
-          <VisitorCounter />
+      <section className="my-6 flex items-center justify-center">
+        <VisitorCounter />
+        
+      </section>
+
+      <section className="flex justify-center items-center mb-30 mt-6">
+        <div className="">
+          <h4 className="text-neutral-500 dark:text-white/60 text-sm font-serif text-center">
+            Design & Developed by <span>Neeraj</span>
+            <br /> &copy; 2025. All Rights reserved.
+          </h4>
         </div>
       </section>
     </main>
