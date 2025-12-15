@@ -4,6 +4,7 @@ import InteractiveTooltip from "@/components/mvpblocks/interactive-tooltip";
 import { BentoDemo } from "@/components/newComponents/bento";
 import { ProjectCard } from "@/components/newComponents/ProjectCard";
 import Tape from "@/components/newComponents/Tape";
+import VisitorCounter from "@/components/newComponents/VisitorCounter";
 import Contacts from "@/components/sections/Contacts";
 import { ProjectSection } from "@/components/sections/projects2";
 import Skills from "@/components/sections/Skills";
@@ -112,6 +113,12 @@ const Home = () => {
       <section className="mb-25">
         <Contacts />
         <ContactUs1 />
+      </section>
+      <section className="mb-56 flex items-center justify-center">
+        <div>
+          <h4>Visitor counter</h4>
+          <VisitorCounter />
+        </div>
       </section>
     </main>
   );
