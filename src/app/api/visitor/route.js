@@ -1,33 +1,20 @@
-export const runtime = "nodejs";
-
-import { kv } from "@vercel/kv";
-import { NextResponse } from "next/server";
-import { cookies } from "next/headers";
+import { kv } from '@vercel/kv';
+import { NextResponse } from 'next/server';
 
 export async function GET() {
-  const cookieStore = cookies();
-  const existing = cookieStore.get("visitor_id");
-
-  if (existing) {
-    return NextResponse.json({
-      count: Number(existing.value),
-      returning: true,
-    });
+  try {
+    const count = await kv.get('visitor_count') || 0;
+    return NextResponse.json({ count });
+  } catch (error) {
+    return NextResponse.json({ error: 'Failed to fetch count' }, { status: 500 });
   }
+}
 
-  const count = await kv.incr("visitor_count");
-
-  const response = NextResponse.json({
-    count,
-    returning: false,
-  });
-
-  response.cookies.set("visitor_id", count.toString(), {
-    maxAge: 60 * 60 * 24 * 30,
-    httpOnly: true,
-    sameSite: "lax",
-    path: "/",
-  });
-
-  return response;
+export async function POST() {
+  try {
+    const count = await kv.incr('visitor_count');
+    return NextResponse.json({ count });
+  } catch (error) {
+    return NextResponse.json({ error: 'Failed to increment count' }, { status: 500 });
+  }
 }
