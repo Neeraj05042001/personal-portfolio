@@ -1,3 +1,5 @@
+export const runtime = "nodejs";
+
 import { kv } from "@vercel/kv";
 import { NextResponse } from "next/server";
 import { cookies } from "next/headers";
